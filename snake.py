@@ -55,3 +55,9 @@ class Snake:
     def eat(self):
         last_seg_position = self.segments[-1].turtle.position()
         self.segments.append(Segment(last_seg_position[0], last_seg_position[1]))
+
+    def reset(self):
+        for seg in self.segments:
+            seg.turtle.goto(1000, 1000)
+        self.segments.clear()
+        self.create()
